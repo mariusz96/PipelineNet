@@ -27,7 +27,6 @@ dotnet add package PipelineNet
 - [Cancellation tokens](#cancellation-tokens)
 - [Middleware resolver](#middleware-resolver)
   - [ServiceProvider implementation](#serviceprovider-implementation)
-  - [Unity implementation](#unity-implementation)
 - [Migrate from PipelineNet 0.10 to 0.11](#migrate-from-pipelinenet-010-to-011)
   - [Changes to the `Finally` method](#changes-to-the-finally-method)
   - [Changes to `MiddlewareResolverResult.IsDisposable`](#changes-to-middlewareresolverresultisdisposable)
@@ -345,14 +344,6 @@ public class MyService : IMyService
 Note that `IServiceProvider` lifetime can vary based on the lifetime of the containing class. For example, if you resolve service from a scope, and it takes an `IServiceProvider`, it'll be a scoped instance.
 
 For more information on dependency injection, see: [Dependency injection - .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection).
-
-### Unity implementation
-
-An implementation of the [middleware resolver for Unity](https://github.com/ShaneYu/PipelineNet.Unity) was kindly provided by [@ShaneYu](https://github.com/ShaneYu). It is tested against Unity.Container `5.X.X`, you can grab it from nuget with:
-
-```
-Install-Package PipelineNet.Unity
-```
 
 ## Migrate from PipelineNet 0.10 to 0.11
 
